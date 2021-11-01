@@ -1,4 +1,10 @@
-[![Moleculer](https://badgen.net/badge/Powered%20by/Moleculer/0e83cd)](https://moleculer.services)
+# cripto-balance
+
+# UI
+http://0.0.0.0:3000/
+
+# SWAGGER
+http://0.0.0.0:3000/api/openapi/ui#/
 
 # test
 This is a [Moleculer](https://moleculer.services/)-based microservices project. Generated with the [Moleculer CLI](https://moleculer.services/docs/0.14/moleculer-cli.html).
@@ -11,15 +17,13 @@ On the welcome page you can test the generated services via API Gateway and chec
 In the terminal, try the following commands:
 - `nodes` - List all connected nodes.
 - `actions` - List all registered service actions.
-- `call greeter.hello` - Call the `greeter.hello` action.
-- `call greeter.welcome --name John` - Call the `greeter.welcome` action with the `name` parameter.
-- `call products.list` - List the products (call the `products.list` action).
+- `call balance.tokens` - List the tokens registred for balance tracker (call the `balance.tokens` action).
+- `call balance.addToken --symbol eth --token 0xhdfs76v5r5as6dfhbjbj23ru6t` - Call the `balance.addToken` action with the `symbol` and `token` parameters.
 
 
 ## Services
 - **api**: API Gateway services
-- **greeter**: Sample service with `hello` and `welcome` actions.
-- **products**: Sample DB service. To use with MongoDB, set `MONGO_URI` environment variables and install MongoDB adapter with `npm i moleculer-db-adapter-mongo`.
+- **balance**: Service for tracking crypto curency tokens balance.
 
 ## Mixins
 - **db.mixin**: Database access mixin for services. Based on [moleculer-db](https://github.com/moleculerjs/moleculer-db#readme)
@@ -40,4 +44,4 @@ In the terminal, try the following commands:
 - `npm test`: Run tests & generate coverage report
 - `npm run dc:up`: Start the stack with Docker Compose
 - `npm run dc:down`: Stop the stack with Docker Compose
-# cripto-balance
+
