@@ -1,0 +1,57 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot services/**/*.service.js",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect NATS",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint services",
+    "dc:up": "docker-compose up --build -d",
+    "dc:logs": "docker-compose logs -f",
+    "dc:down": "docker-compose down"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "jest": "^27.1.0",
+    "jest-cli": "^27.1.0",
+    "moleculer-repl": "^0.6.6"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bluebird": "^3.7.2",
+    "jsonrpc-ws-client": "^1.1.7",
+    "modular-json-rpc": "^1.0.6",
+    "moleculer": "^0.14.16",
+    "moleculer-auto-openapi": "^1.0.8",
+    "moleculer-db": "^0.8.15",
+    "moleculer-db-adapter-mongo": "^0.4.13",
+    "moleculer-db-adapter-mongoose": "^0.8.12",
+    "moleculer-web": "^0.10.2",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.12",
+    "nats": "^2.2.0",
+    "ramda": "^0.27.1",
+    "rxjs": "^7.4.0",
+    "web3": "^1.6.0",
+    "ws": "^8.2.3"
+  },
+  "engines": {
+    "node": ">= 12.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}
