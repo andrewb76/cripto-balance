@@ -1,8 +1,10 @@
 const axios = require("axios");
 
+const PROJECT_ID = "98568392710f4beaa2fbdea5e1225512";
+
 const instance = axios.create({
-	baseURL: "https://ropsten.infura.io/v3/98568392710f4beaa2fbdea5e1225512",
-	timeout: 5000,
+	baseURL: `https://ropsten.infura.io/v3/${PROJECT_ID}`,
+	timeout: 4000,
 	headers: {
 		"Content-Type": "application/json"
 	}

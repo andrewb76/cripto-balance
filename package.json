@@ -6,7 +6,7 @@
     "dev": "moleculer-runner --repl --hot services/**/*.service.js",
     "start": "moleculer-runner",
     "cli": "moleculer connect NATS",
-    "ci": "jest --watch",
+    "ci": "jest --watch --verbose",
     "test": "jest --coverage",
     "lint": "eslint services",
     "dc:up": "docker-compose up --build -d",

@@ -1,10 +1,13 @@
-# cripto-balance
+# crypto-balance
 
 # UI
 http://0.0.0.0:3000/
 
 # SWAGGER
 http://0.0.0.0:3000/api/openapi/ui#/
+
+# METRICS
+http://0.0.0.0:3030/metrics
 
 # test
 This is a [Moleculer](https://moleculer.services/)-based microservices project. Generated with the [Moleculer CLI](https://moleculer.services/docs/0.14/moleculer-cli.html).
@@ -24,6 +27,7 @@ In the terminal, try the following commands:
 ## Services
 - **api**: API Gateway services
 - **balance**: Service for tracking crypto curency tokens balance.
+- **exchange**: Service for tracking crypto curency exchange rates.
 
 ## Mixins
 - **db.mixin**: Database access mixin for services. Based on [moleculer-db](https://github.com/moleculerjs/moleculer-db#readme)

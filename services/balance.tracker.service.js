@@ -20,12 +20,12 @@ module.exports = {
 	actions: {
 		update: {
 			visibility: "public",
-			async handler(ctx) {
+			async handler() {
 				TRACKING_LIST = (await this.broker.call("balanceRegistry.find")).map(wl => ({
 					symbol: wl.symbol,
 					token: wl.token,
 				}));
-				console.log(":::::: UPDATE TRACKING_LIST", TRACKING_LIST);
+				// console.log(":::::: UPDATE TRACKING_LIST", TRACKING_LIST);
 				return true;
 			}
 		},
@@ -34,7 +34,7 @@ module.exports = {
 	async started() {
 		this.actions.update();
 		$updateTimer.subscribe(async () => {
-			console.log("TRACKING_LIST", TRACKING_LIST);
+			// console.log("TRACKING_LIST", TRACKING_LIST);
 			const exchangeList = R.pipe(
 				R.filter((wl) => R.has(wl.symbol, SYMBOL_EXCHANGES)),
 				R.map((wl) => SYMBOL_EXCHANGES[wl.symbol].map(se => wl.symbol + se)),
@@ -45,7 +45,7 @@ module.exports = {
 			const rateDic = await this.broker.call("exchange.getRates", { keys: exchangeList });
 			// console.log("::-::", rateDic);
 			
-			const freshBalances = await Promise.map(TRACKING_LIST, async ({ symbol, token }) => {
+			Promise.map(TRACKING_LIST, async ({ symbol, token }) => {
 				let balanceWei = 0;
 				if (symbol === "eth") {
 					// console.log(':::>>>> ETH');
@@ -53,10 +53,12 @@ module.exports = {
 				} else if (symbol === "orn") {
 					balanceWei = await this.broker.call("erc20-balance.getBalance", { wl: token });
 				} else {
-					// throw new Error("Uncnown symbol", symbol);
+					console.log(" SKIP UNKNOWN SYMBOL ", symbol, token);
+					return;
 				}
+
 				if (!balanceWei) {
-					console.log(' SKIP EMPTY VALUE ', symbol, token);
+					console.log(" SKIP EMPTY VALUE ", symbol, token);
 					return;
 				}
 

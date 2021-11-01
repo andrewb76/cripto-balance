@@ -2,7 +2,7 @@
 
 const { ServiceBroker, Context } = require("moleculer");
 const { ValidationError } = require("moleculer").Errors;
-const TestService = require("../../services/products.service");
+const TestService = require("../../services/balance.service");
 
 describe("Test 'products' service", () => {
 
@@ -15,8 +15,8 @@ describe("Test 'products' service", () => {
 		afterAll(() => broker.stop());
 
 		const record = {
-			name: "Awesome item",
-			price: 999
+			token: "0x00000000000000001",
+			symbol: 'eth',
 		};
 		let newID;
 

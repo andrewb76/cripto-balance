@@ -1,4 +1,3 @@
-const R = require("ramda");  
 const DbMixin = require("../mixins/db.mixin");
 const MongooseAdapter = require("moleculer-db-adapter-mongoose");
 const mongoose = require("mongoose");
@@ -34,7 +33,7 @@ module.exports = {
 			},
 			handler(ctx) {
 				const { params: {token, startDate, endDate, currencies }} = ctx;
-				return new Promise((resolve, reject) => {
+				return new Promise((resolve) => {
 					const curList = currencies.split(",").map(c => c.trim().toLowerCase()).filter(c => ALLOWED_SYMBOLS.includes(c));
 
 					//check currencies

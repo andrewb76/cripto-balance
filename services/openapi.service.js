@@ -10,10 +10,10 @@ module.exports = {
 				version: "0.0.1",
 				// about project
 				title: "ORN Test Task",
-				description: "Cripto balance tracker",
+				description: "Cripto Balance Tracker",
 				contact: {
 					name: "Andrew B.",
-					// url: "https://github.com/devalexandre",
+					url: "https://github.com/andrewb76/crypto-balance",
 					email: "andrewb@bk.ru"
 				},
 			},
