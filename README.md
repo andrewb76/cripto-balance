@@ -1,10 +1,10 @@
 # crypto-balance
 
 # UI
-http://0.0.0.0:3000/
+http://0.0.0.0:3010/
 
 # SWAGGER
-http://0.0.0.0:3000/api/openapi/ui#/
+http://0.0.0.0:3010/api/openapi/ui#/
 
 # METRICS
 http://0.0.0.0:3030/metrics
@@ -14,7 +14,7 @@ This is a [Moleculer](https://moleculer.services/)-based microservices project. 
 
 ## Usage
 Start the project with `npm run dev` command. 
-After starting, open the http://localhost:3000/ URL in your browser. 
+After starting, open the http://localhost:3010/ URL in your browser. 
 On the welcome page you can test the generated services via API Gateway and check the nodes & services.
 
 In the terminal, try the following commands:
